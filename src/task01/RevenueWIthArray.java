@@ -1,22 +1,20 @@
 package task01;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class RevenueWIthArray {
 
-    private ArrayList<Product> products;
+    private ArrayList<Product> products = new ArrayList<>();
     private int index;
 
-    RevenueWIthArray(int numberOfProducts) {
-        for (int i = 0; i < numberOfProducts; i++) {
-            Product product = new Product(i, "Some description", 200.00, 100.00, 10.00 );
-            products.add(product);
-        }
+    public RevenueWIthArray() {
+
     }
 
-    public void insertProduct(Product product) {
-        this.products.add(product);
+    public void insertProduct(Product product, int numberOfProducts) {
+        for (int i = 0; i < numberOfProducts; i++) {
+            this.products.add(product);
+        }
     }
 
     public void buy(int code, int qtd) {
@@ -51,9 +49,17 @@ public class RevenueWIthArray {
 
     public void listPrices() {
         for (Product prod: products) {
-            System.out.println("Code? " + prod.getCode());
+            System.out.println("Code: " + prod.getCode());
             System.out.println("Description:" + prod.getDescription());
             System.out.println("Purchase Value: " + prod.getPurchaseValue());
         }
+    }
+
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+    public int getTotalProductsNumber() {
+        return this.products.toArray().length;
     }
 }

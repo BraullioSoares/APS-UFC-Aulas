@@ -37,6 +37,14 @@ public class Product {
         return this.purchaseValue + this.productCost + this.profit * (this.purchaseValue + this.productCost);
     }
 
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public int getCode() {
         return code;
     }
@@ -67,5 +75,13 @@ public class Product {
 
     public void setProfit(double profit) {
         this.profit = profit;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
